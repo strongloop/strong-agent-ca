@@ -1,0 +1,27 @@
+{
+  "name": "strong-agent-ca",
+  "version": "1.0.0-0",
+  "description": "strong-agent plugin that reports to CA EPAgent REST API",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:strongloop/strong-agent-ca.git"
+  },
+  "author": "StrongLoop <callback@strongloop.com>",
+  "license": "None",
+  "bugs": {
+    "url": "https://github.com/strongloop/strong-agent-ca/issues"
+  },
+  "homepage": "https://github.com/strongloop/strong-agent-ca",
+  "devDependencies": {
+    "tap": "^0.4.13"
+  },
+  "dependencies": {
+    "concat-stream": "^1.4.6",
+    "debug": "^2.1.0",
+    "lodash": "^2.4.1"
+  }
+}
