@@ -1,12 +1,12 @@
 var test = require('tap').test;
-var getType = require('../lib/metric').getType;
+var typeOf = require('../lib/metric').typeOf;
 
-test('metric.getType', function(t) {
-  t.equal(getType('tiers.54.191.244.236_out.average'), 'IntAverage',
+test('metric.typeOf', function(t) {
+  t.equal(typeOf('tiers.54.191.244.236_out.average'), 'IntAverage',
           'tiers averages are IntAverages');
-  t.equal(getType('loop.max'), 'IntAverage',
+  t.equal(typeOf('loop.max'), 'IntAverage',
           'max values are IntAverage');
-  t.equal(getType('loop.count'), 'IntCounter',
+  t.equal(typeOf('loop.count'), 'PerIntervalCounter',
           'loop.count is IntCounter');
   t.end();
 });

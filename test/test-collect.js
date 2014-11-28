@@ -11,9 +11,9 @@ tap.test('Collector.collect', function(t) {
 
   function verifyMetrics(metrics) {
     t.deepEqual(metrics, {
-      'h.p.a.counter': 1,
-      'h.p.b.average': 2,
-      'h.p.c.gauge': 3,
+      'h.p.a.counter': [1],
+      'h.p.b.average': [2],
+      'h.p.c.gauge': [3],
     }, 'collector aggregates metrics');
     collector.stop();
     t.end();
