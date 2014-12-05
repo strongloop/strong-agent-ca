@@ -11,5 +11,11 @@ test('metric.nameOf', function(t) {
   t.equal(nameOf('tiers.54.191.244.236:8080_in.average', 'PREFIX'),
           'PREFIX|backends|tiers|54.191.244.236-8080|in:average',
           'translates separators to -');
+  t.equal(nameOf('tiers.54.191.244.236:8080_out.average', 'strong-agent@1.0.3'),
+          'strong-agent@1.0.3|backends|tiers|54.191.244.236-8080|out:average',
+          'translates separators to -');
+  t.equal(nameOf('54.191.244.236:8080.average', 'strong-agent@1.1.x'),
+          'strong-agent@1.1.x|backends|54.191.244.236-8080:average',
+          'translates ip addresses appropriately');
   t.end();
 });
