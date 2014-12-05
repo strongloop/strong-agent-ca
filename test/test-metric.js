@@ -53,6 +53,16 @@ test('metric:makeCaMetrics', function(t) {
       { type: 'IntAverage', name: 'strong-agent@1.1.x|backends|54.191.244.236:average', value: 141 },
     ]);
 
+  testTransform(['relative', 'http.connection.count', [0, 3,2,-5, 5,-1] ],
+    [
+      { type: 'IntCounter', name: 'relative|http|connection:count', value: 0 },
+      { type: 'IntCounter', name: 'relative|http|connection:count', value: 3 },
+      { type: 'IntCounter', name: 'relative|http|connection:count', value: 5 },
+      { type: 'IntCounter', name: 'relative|http|connection:count', value: 0 },
+      { type: 'IntCounter', name: 'relative|http|connection:count', value: 5 },
+      { type: 'IntCounter', name: 'relative|http|connection:count', value: 4 },
+    ]);
+
   t.end();
 
   function testTransform(given, expected) {
