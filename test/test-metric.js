@@ -25,6 +25,13 @@ test('metric:makeCaMetrics', function(t) {
   testTransform(['loop', 'loop.maximum', [ 1.12, 3.58, 13.21 ]],
     [ { type: 'IntCounter', name: 'loop|loop:maximum (µs)', value: 13210 } ]);
 
+  testTransform(['strong-agent@1.0.3', 'tiers.54.191.244.236_out.average', [137.833, 123.456, 432.123]],
+    [
+      { type: 'IntAverage', name: 'strong-agent@1.0.3|backends|tiers|54.191.244.236|out:average', value: 138 },
+      { type: 'IntAverage', name: 'strong-agent@1.0.3|backends|tiers|54.191.244.236|out:average', value: 123 },
+      { type: 'IntAverage', name: 'strong-agent@1.0.3|backends|tiers|54.191.244.236|out:average', value: 432 },
+    ]);
+
   testTransform(['strong-agent@1.0.3', 'tiers.54.191.244.236:8080_out.average', [137.833, 123.456, 432.123]],
     [
       { type: 'IntAverage', name: 'strong-agent@1.0.3|backends|tiers|54.191.244.236-8080|out:average', value: 138 },
@@ -34,9 +41,16 @@ test('metric:makeCaMetrics', function(t) {
 
   testTransform(['strong-agent@1.1.x', '54.191.244.236:8080.average', [139.866, 130.123, 140.532]],
     [
-      { type: 'IntAverage', name: 'strong-agent@1.1.x|54.191.244.236-8080:average', value: 140 },
-      { type: 'IntAverage', name: 'strong-agent@1.1.x|54.191.244.236-8080:average', value: 130 },
-      { type: 'IntAverage', name: 'strong-agent@1.1.x|54.191.244.236-8080:average', value: 141 },
+      { type: 'IntAverage', name: 'strong-agent@1.1.x|backends|54.191.244.236-8080:average', value: 140 },
+      { type: 'IntAverage', name: 'strong-agent@1.1.x|backends|54.191.244.236-8080:average', value: 130 },
+      { type: 'IntAverage', name: 'strong-agent@1.1.x|backends|54.191.244.236-8080:average', value: 141 },
+    ]);
+
+  testTransform(['strong-agent@1.1.x', '54.191.244.236.average', [139.866, 130.123, 140.532]],
+    [
+      { type: 'IntAverage', name: 'strong-agent@1.1.x|backends|54.191.244.236:average', value: 140 },
+      { type: 'IntAverage', name: 'strong-agent@1.1.x|backends|54.191.244.236:average', value: 130 },
+      { type: 'IntAverage', name: 'strong-agent@1.1.x|backends|54.191.244.236:average', value: 141 },
     ]);
 
   t.end();
