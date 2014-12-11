@@ -13,12 +13,12 @@ tap.test('reporter.collect', function(t) {
   };
   var expectedReport = {
     metrics: [
-      { type: 'IntCounter', name: 'StrongLoop|testStats|h|p|a:counter', value: 1 },
-      { type: 'IntCounter', name: 'StrongLoop|testStats|h|p|a:counter', value: 1 },
-      { type: 'IntAverage', name: 'StrongLoop|testStats|h|p|b:average', value: 2 },
-      { type: 'IntAverage', name: 'StrongLoop|testStats|h|p|b:average', value: 3 },
-      { type: 'IntCounter', name: 'StrongLoop|testStats|h|p|c:gauge', value: 5 },
-      { type: 'IntCounter', name: 'StrongLoop|testStats|h|p|c:gauge', value: 8 },
+      { type: 'IntCounter', name: 'testStats|h|p|a:counter', value: 1 },
+      { type: 'IntCounter', name: 'testStats|h|p|a:counter', value: 1 },
+      { type: 'IntAverage', name: 'testStats|h|p|b:average', value: 2 },
+      { type: 'IntAverage', name: 'testStats|h|p|b:average', value: 3 },
+      { type: 'IntCounter', name: 'testStats|h|p|c:gauge', value: 5 },
+      { type: 'IntCounter', name: 'testStats|h|p|c:gauge', value: 8 },
     ],
   };
 
