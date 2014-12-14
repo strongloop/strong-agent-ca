@@ -20,10 +20,10 @@ test('metric:makeCaMetrics', function(t) {
     ]);
 
   testTransform(['loop', 'loop.minimum', [ 1.12, 3.58, 13.21 ]],
-    [ { type: 'IntCounter', name: 'loop|loop:minimum (µs)', value: 1120 } ]);
+    [ { type: 'IntCounter', name: 'loop|loop:minimum (ms)', value: 1 } ]);
 
   testTransform(['loop', 'loop.maximum', [ 1.12, 3.58, 13.21 ]],
-    [ { type: 'IntCounter', name: 'loop|loop:maximum (µs)', value: 13210 } ]);
+    [ { type: 'IntCounter', name: 'loop|loop:maximum (ms)', value: 13 } ]);
 
   testTransform(['strong-agent@1.0.3', 'tiers.54.191.244.236_out.average', [137.833, 123.456, 432.123]],
     [
