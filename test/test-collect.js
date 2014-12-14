@@ -2,7 +2,7 @@ var tap = require('tap');
 var Collector = require('../lib/collector');
 
 tap.test('Collector.collect', function(t) {
-  var collector = new Collector({interval: 200});
+  var collector = new Collector();
 
   collector.once('metrics', verifyMetrics1);
   collector.collect('h.p.a.counter', 1);
@@ -12,6 +12,7 @@ tap.test('Collector.collect', function(t) {
   collector.collect('http.connection.count', -2);
   collector.collect('http.connection.count', 1);
   collector.collect('http.connection.count', 4);
+  collector.dump();
 
   function verifyMetrics1(metrics) {
     t.deepEqual(metrics, {
@@ -21,6 +22,7 @@ tap.test('Collector.collect', function(t) {
       'http.connection.count': [3, -2, 1, 4],
     }, 'collector aggregates metrics');
     collector.once('metrics', verifyMetrics2);
+    collector.dump();
   }
   function verifyMetrics2(metrics) {
     t.deepEqual(metrics, {
@@ -29,7 +31,6 @@ tap.test('Collector.collect', function(t) {
       'h.p.c.gauge': [],
       'http.connection.count': [6],
     }, 'collector resets metrics appropriately');
-    collector.stop();
     t.end();
   }
 });

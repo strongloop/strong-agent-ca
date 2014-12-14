@@ -13,5 +13,8 @@ function simple(opts) {
   //       function once strong-agent has a bulk metrics API
   var collector = new Collector(opts);
   collector.on('metrics', reporter.prepare.bind(reporter));
-  return collector.collect.bind(collector);
+  return {
+    collect: collector.collect.bind(collector),
+    report: collector.dump.bind(collector),
+  };
 }
