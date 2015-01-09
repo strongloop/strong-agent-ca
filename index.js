@@ -1,3 +1,5 @@
+// Copyright (c) 2014-2015 StrongLoop
+
 var Collector = require('./lib/collector');
 var Reporter = require('./lib/reporter');
 

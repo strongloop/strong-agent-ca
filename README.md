@@ -17,3 +17,6 @@ require(strong-agent).use(ca);
 
 // your code here!
 ```
+
+---
+Copyright &copy; 2014-2015 StrongLoop

@@ -1,3 +1,5 @@
+// Copyright (c) 2014-2015 StrongLoop
+
 var test = require('tap').test;
 var nameOf = require('../lib/metric').nameOf;
 

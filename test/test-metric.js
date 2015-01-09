@@ -1,3 +1,5 @@
+// Copyright (c) 2014-2015 StrongLoop
+
 var fmt = require('util').format;
 var test = require('tap').test;
 var makeMetrics = require('../lib/metric');

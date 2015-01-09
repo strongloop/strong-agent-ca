@@ -1,3 +1,5 @@
+// Copyright (c) 2014-2015 StrongLoop
+
 var tap = require('tap');
 var http = require('http');
 var Reporter = require('../lib/reporter');
