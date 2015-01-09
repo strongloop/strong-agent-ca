@@ -5,6 +5,7 @@ var test = require('tap').test;
 var makeMetrics = require('../lib/metric');
 
 test('metric:makeCaMetrics', function(t) {
+  // jshint maxlen:120
 
   testTransform(['ints', 'h.p.a.counter', [1,2,3,4]],
     [

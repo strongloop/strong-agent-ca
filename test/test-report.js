@@ -3,7 +3,7 @@
 var tap = require('tap');
 var http = require('http');
 var Reporter = require('../lib/reporter');
-var concat = require('concat-stream')
+var concat = require('concat-stream');
 
 tap.test('reporter.collect', function(t) {
   t.plan(2);
@@ -34,7 +34,7 @@ tap.test('reporter.collect', function(t) {
   });
 
   epAgent.listen(0, function() {
-    Reporter({
+    new Reporter({
       port: epAgent.address().port,
       metricsPath: metricsPath
     }).prepare(collected);
