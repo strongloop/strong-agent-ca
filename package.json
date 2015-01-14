@@ -1,6 +1,6 @@
 {
   "name": "strong-agent-ca",
-  "version": "1.0.0-0",
+  "version": "1.0.0",
   "description": "strong-agent plugin that reports to CA EPAgent REST API",
   "main": "index.js",
   "scripts": {
