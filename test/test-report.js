@@ -6,7 +6,6 @@ var Reporter = require('../lib/reporter');
 var concat = require('concat-stream');
 
 tap.test('reporter.collect', function(t) {
-  t.plan(2);
   var metricsPath = 'testStats';
   var collected = {
     'h.p.a.counter': [1, 1],
@@ -39,4 +38,5 @@ tap.test('reporter.collect', function(t) {
       metricsPath: metricsPath
     }).prepare(collected);
   });
+  epAgent.on('close', t.end);
 });
