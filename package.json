@@ -11,10 +11,7 @@
     "url": "git@github.com:strongloop/strong-agent-ca.git"
   },
   "author": "StrongLoop <callback@strongloop.com>",
-  "license": {
-    "name": "StrongLoop",
-    "url": "http://strongloop.com/license/"
-  },
+  "license": "SEE LICENSE IN LICENSE.md",
   "bugs": {
     "url": "https://github.com/strongloop/strong-agent-ca/issues"
   },
