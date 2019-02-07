@@ -22,6 +22,6 @@
   "dependencies": {
     "concat-stream": "^1.4.6",
     "debug": "^2.1.0",
-    "lodash": "^2.4.1"
+    "lodash": "^4.17.11"
   }
 }
